@@ -1,0 +1,29 @@
+{
+  "name": "Get Cryptos",
+  "description": "Get Crypto Prices",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Cryptos"
+  },
+  "icons": {
+    "16": "bitcoin-192.png",
+    "48": "bitcoin-192.png",
+    "128": "bitcoin-192.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./static/js/content.js"],
+      "all_frames": false,
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "optional_permissions": [
+    "<all_urls>"
+  ]
+}
